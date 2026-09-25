@@ -1,23 +1,86 @@
-<section class="py-16 sm:py-20">
-  <div class="mx-auto max-w-2xl px-4 text-center sm:px-6 lg:max-w-7xl lg:px-8">
+---
+// Replicating the Litmus7 CTA Card
+// Style: Floating deep emerald gradient card, dual typography (Sans-serif + Italic Serif), and outline pill CTA button
+---
+
+<section class="relative py-20 sm:py-28 lg:py-32 overflow-hidden" id="community" aria-label="Join the Community">
+  <!-- Vertical dashed guide lines continuing the editorial grid -->
+  <div class="pointer-events-none absolute inset-0 px-3 sm:px-6 lg:px-8 flex justify-between">
+    <div class="h-full w-px border-l border-dashed border-neutral-300/40 dark:border-white/10"></div>
+    <div class="h-full w-px border-r border-dashed border-neutral-300/40 dark:border-white/10"></div>
+  </div>
+
+  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <!-- Deep Emerald / Forest Gradient Card with high border radius -->
     <div
-      class="bg-primary-500/10 dark:bg-primary-400/10 flex flex-col items-center gap-8 rounded-3xl px-5 py-16 sm:gap-10"
+      class="relative overflow-hidden rounded-[2.5rem] sm:rounded-[3.5rem] lg:rounded-[4rem] px-6 py-20 sm:py-28 lg:py-36 text-center text-white shadow-2xl"
+      style="
+        background: radial-gradient(110% 120% at 85% 15%, #064e3b 0%, #03362a 40%, #011f18 80%, #011611 100%);
+        box-shadow: 0 25px 60px -15px rgba(2, 38, 30, 0.45);
+      "
     >
-      <div class="flex flex-col gap-4 sm:gap-6">
-        <h2 class="mx-auto max-w-sm text-3xl font-medium tracking-tight sm:text-4xl">
-          Let's make something amazing together
-        </h2>
-        <p class="text-primary-950/70 dark:text-primary-200/70 mx-auto max-w-2xl text-lg">
-          Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing
-          sagittis vel nulla nec.
-        </p>
+      <!-- Ambient interior glow effects -->
+      <div class="pointer-events-none absolute inset-0 -z-0 overflow-hidden">
+        <!-- Top right soft emerald highlight -->
+        <div
+          class="absolute -top-[30%] -right-[15%] h-[500px] w-[500px] rounded-full blur-3xl opacity-30"
+          style="background: radial-gradient(circle, rgba(16, 185, 129, 0.5) 0%, transparent 70%);"
+        ></div>
+        <!-- Bottom left subtle ambient depth -->
+        <div
+          class="absolute -bottom-[30%] -left-[15%] h-[450px] w-[450px] rounded-full blur-3xl opacity-20"
+          style="background: radial-gradient(circle, rgba(5, 150, 105, 0.4) 0%, transparent 70%);"
+        ></div>
       </div>
-      <a
-        href="/contact"
-        class="bg-primary-600 dark:bg-primary-400 hover:bg-primary-700 dark:hover:bg-primary-300 focus-visible:outline-primary-600 dark:focus-visible:outline-primary-400 dark:text-primary-950 inline-flex items-center justify-center rounded-full border border-transparent px-5 py-3 text-base font-medium text-white transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
-      >
-        Contact us
-      </a>
+
+      <div class="relative z-10 mx-auto max-w-4xl flex flex-col items-center gap-6 sm:gap-8">
+        <!-- Subtle Pill Eyebrow -->
+        <span
+          class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-1.5 text-xs uppercase tracking-[0.2em] font-medium text-emerald-200/90 backdrop-blur-sm"
+        >
+          Join The Community
+        </span>
+
+        <!-- Two-Part Typographic Headline -->
+        <h2
+          class="text-4xl sm:text-6xl md:text-7xl lg:text-[5.25rem] font-medium tracking-[-0.03em] leading-[1.12] text-white"
+          style="font-family: 'Plus Jakarta Sans', 'Poppins', sans-serif;"
+        >
+          Ready to elevate your <br class="hidden sm:inline" />
+          <span
+            class="font-normal italic tracking-[-0.01em]"
+            style="font-family: 'Instrument Serif', Georgia, serif; color: #ffffff;"
+          >
+            IB & IGCSE journey in Pune?
+          </span>
+        </h2>
+
+        <!-- Outline Pill CTA Button matching screenshot -->
+        <div class="pt-4 sm:pt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="https://instagram.com/sevenine.in"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group inline-flex items-center gap-2 rounded-full border border-white/40 hover:border-white bg-white/10 hover:bg-white text-white hover:text-neutral-950 text-sm font-medium px-8 py-3.5 transition-all duration-200 backdrop-blur-sm shadow-sm"
+          >
+            <span>Join Now</span>
+            <svg
+              class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
+

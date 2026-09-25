@@ -1,29 +1,117 @@
-<section class="py-16 sm:py-20">
-  <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-    <div class="flex flex-col gap-16">
-      <div class="flex flex-col items-start gap-8 sm:gap-10">
-        <div class="flex max-w-xl flex-col items-start gap-4 sm:gap-6">
-          <h1 class="text-4xl font-medium tracking-tight sm:text-5xl lg:text-6xl">
-            We design and build your next digital experience
-          </h1>
-          <p class="text-primary-950/70 dark:text-primary-200/70 text-lg sm:text-xl">
-            Anim aute id magna aliqua ad ad non deserunt sunt.
-          </p>
-        </div>
-        <a
-          href="/pricing"
-          class="bg-primary-600 dark:bg-primary-400 hover:bg-primary-700 dark:hover:bg-primary-300 focus-visible:outline-primary-600 dark:focus-visible:outline-primary-400 dark:text-primary-950 inline-flex items-center justify-center rounded-full border border-transparent px-5 py-3 text-base font-medium text-white transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
-        >
-          Get started
-        </a>
-      </div>
-      <img
-        class="h-auto w-full rounded-3xl"
-        width="1280"
-        height="640"
-        src="/assets/hero.webp"
-        alt="Hero picture"
-      />
+---
+import CRTWarp from './CRTWarp.jsx';
+
+interface Props {
+  headlinePrefix?: string;
+  focus1?: string;
+  focus2?: string;
+  focus3?: string;
+  headlineSuffix?: string;
+}
+
+const {
+  headlinePrefix = 'WE LIVE OUR BEST LIVES EXCELLING AT',
+  focus1 = 'IB DIPLOMA',
+  focus2 = 'CAMBRIDGE IGCSE',
+  focus3 = 'PEER VENTURES',
+  headlineSuffix = 'AND EVERYTHING WE TOUCH',
+} = Astro.props;
+---
+
+<section
+  class="relative min-h-[88vh] w-full flex flex-col justify-center items-center overflow-hidden pt-32 pb-24 sm:pt-40 sm:pb-32 px-6 sm:px-10 lg:px-16 select-none hero-radiance-stage transition-colors duration-300"
+  aria-label="Hero"
+>
+  <!-- Ambient Logo Color Atmosphere (Blue & Orange) -->
+  <div class="pointer-events-none absolute -top-32 -left-32 w-[28rem] h-[28rem] rounded-full bg-[#1b90ff]/10 dark:bg-[#1b90ff]/15 blur-3xl z-0" aria-hidden="true"></div>
+  <div class="pointer-events-none absolute -bottom-32 -right-32 w-[28rem] h-[28rem] rounded-full bg-[#ff551f]/10 dark:bg-[#ff551f]/15 blur-3xl z-0" aria-hidden="true"></div>
+
+  <!-- React Bits <CRTWarp /> Shader in Background with Logo Colors -->
+  <div class="pointer-events-none absolute inset-0 z-0 overflow-hidden opacity-90 dark:opacity-80">
+    <CRTWarp
+      client:load
+      color="#1b90ff"
+      secondaryColor="#ff551f"
+      backgroundColor="auto"
+      speed={0.5}
+      curvature={0.25}
+      scanlineStrength={0.25}
+      scanlineFrequency={200}
+      waveAmplitude={0.3}
+      waveFrequency={2.5}
+      bloom={0.85}
+      bloomRadius={1.1}
+      noise={0.05}
+      vignette={0}
+      brightness={0.8}
+      pixelation={1}
+      rgbShift={0.015}
+      mouseReact={true}
+      mouseStrength={0.5}
+      dpr={1}
+      fps={30}
+    />
+  </div>
+
+  <!-- Center Floating Golden Ring Emblem -->
+  <div class="relative z-10 mb-8 sm:mb-12 flex items-center justify-center">
+    <div class="gold-halo-rotate group cursor-pointer transition-transform duration-500 hover:scale-110">
+      <svg class="w-10 h-5 sm:w-12 sm:h-6 drop-shadow-[0_2px_10px_rgba(217,119,6,0.35)]" viewBox="0 0 60 28" fill="none">
+        <ellipse cx="30" cy="14" rx="26" ry="9" stroke="url(#gold-ring-gradient)" stroke-width="4.5" />
+        <defs>
+          <linearGradient id="gold-ring-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#f59e0b" />
+            <stop offset="30%" stop-color="#fef3c7" />
+            <stop offset="65%" stop-color="#d97706" />
+            <stop offset="100%" stop-color="#92400e" />
+          </linearGradient>
+        </defs>
+      </svg>
     </div>
   </div>
+
+  <!-- CENTER STAGE: Bold Uppercase Mission Statement with Underlined Specializations -->
+  <div class="relative z-10 max-w-5xl mx-auto text-center">
+    <h1
+      class="hero-manifesto-heading text-2xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold uppercase leading-[1.3] tracking-[-0.015em]"
+      style="font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;"
+    >
+      <span>{headlinePrefix}</span>
+      <span class="inline-block relative underline decoration-[2.5px] sm:decoration-[3.5px] underline-offset-[6px] sm:underline-offset-[8px] mx-1">
+        {focus1}
+      </span>,
+      <span class="inline-block relative underline decoration-[2.5px] sm:decoration-[3.5px] underline-offset-[6px] sm:underline-offset-[8px] mx-1">
+        {focus2}
+      </span>,
+      <span class="inline-block relative underline decoration-[2.5px] sm:decoration-[3.5px] underline-offset-[6px] sm:underline-offset-[8px] mx-1">
+        {focus3}
+      </span>
+      <span>{headlineSuffix}</span>
+    </h1>
+  </div>
 </section>
+
+<style>
+  .hero-radiance-stage {
+    background-color: #0b0d11;
+    color: #f3f4f6;
+  }
+
+  .hero-manifesto-heading {
+    color: #ffffff;
+    text-shadow: 0 2px 20px rgba(11, 13, 17, 0.95), 0 0 8px rgba(11, 13, 17, 0.9);
+  }
+
+  .gold-halo-rotate {
+    animation: floatHalo 6s ease-in-out infinite;
+  }
+
+  @keyframes floatHalo {
+    0%, 100% {
+      transform: translateY(0px) rotateX(15deg);
+    }
+    50% {
+      transform: translateY(-5px) rotateX(25deg);
+    }
+  }
+</style>

@@ -1,0 +1,71 @@
+---
+interface Props {
+  class?: string;
+  size?: 'sm' | 'md' | 'lg';
+}
+
+const { class: className = '', size = 'md' } = Astro.props;
+
+const sizeStyles = {
+  sm: {
+    container: 'text-lg',
+    num: 'text-xl',
+    divider: 'text-base opacity-40 mx-1.5',
+    domain: 'text-base',
+  },
+  md: {
+    container: 'text-2xl',
+    num: 'text-2xl sm:text-3xl',
+    divider: 'text-xl opacity-35 mx-2',
+    domain: 'text-xl sm:text-2xl',
+  },
+  lg: {
+    container: 'text-3xl sm:text-4xl',
+    num: 'text-3xl sm:text-4xl',
+    divider: 'text-2xl sm:text-3xl opacity-35 mx-2.5',
+    domain: 'text-2xl sm:text-3xl',
+  },
+}[size];
+---
+
+<span
+  class:list={[
+    'inline-flex items-center select-none font-normal tracking-normal transition-opacity hover:opacity-90',
+    sizeStyles.container,
+    className,
+  ]}
+  style="font-family: 'Poppins', sans-serif; font-weight: 400;"
+>
+  <!-- 79 Group: letter-spacing -0.2em (-200 Canva units) with linear gradient 90deg from #1b90ff to #ff551f -->
+  <span
+    class="font-normal"
+    style="
+      letter-spacing: -0.2em;
+      padding-right: 0.2em;
+      background: linear-gradient(90deg, #1b90ff 0%, #ff551f 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+      line-height: 1;
+    "
+  >79</span>
+
+  <!-- Separator bar -->
+  <span
+    class:list={['font-light text-primary-400 dark:text-primary-600', sizeStyles.divider]}
+    style="line-height: 1;"
+  >|</span>
+
+  <!-- sevenine.in Group: letter-spacing -0.05em (-50 Canva units) with separate linear gradient 90deg from #1b90ff to #ff551f -->
+  <span
+    class="font-normal"
+    style="
+      letter-spacing: -0.05em;
+      background: linear-gradient(90deg, #1b90ff 0%, #ff551f 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+      line-height: 1;
+    "
+  >sevenine.in</span>
+</span>

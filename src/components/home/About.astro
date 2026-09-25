@@ -1,23 +1,85 @@
-<section class="py-16 sm:py-20">
-  <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-    <div class="grid gap-12 lg:grid-cols-3 lg:gap-8">
-      <h2 class="text-3xl font-medium tracking-tight sm:text-4xl">About</h2>
-      <div class="flex flex-col items-start gap-8 sm:gap-10 lg:col-span-2">
-        <p class="text-primary-950/70 dark:text-primary-200/70 text-base sm:text-lg">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis
-          suscipit eaque, iste dolor cupiditate blanditiis ratione. Lorem ipsum, dolor sit amet
-          consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor
-          cupiditate blanditiis ratione. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-          Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis
-          suscipit eaque, iste dolor cupiditate.
-        </p>
-        <a
-          href="/about"
-          class="bg-primary-600 dark:bg-primary-400 hover:bg-primary-700 dark:hover:bg-primary-300 focus-visible:outline-primary-600 dark:focus-visible:outline-primary-400 dark:text-primary-950 inline-flex items-center justify-center rounded-full border border-transparent px-5 py-3 text-base font-medium text-white transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+---
+// "The Story Behind SEVENINE"
+// Styled after the bold editorial aesthetic: black background, high-contrast big text with italic serif accent, and narrative column
+---
+
+<section
+  class="relative bg-black text-white overflow-hidden py-24 sm:py-32 lg:py-40"
+  style="background-color: #050608; color: #ffffff;"
+  id="about"
+  aria-label="The Story Behind SEVENINE"
+>
+  <!-- Vertical dashed guide lines continuing the editorial grid -->
+  <div class="pointer-events-none absolute inset-0 px-3 sm:px-6 lg:px-8 flex justify-between">
+    <div class="h-full w-px border-l border-dashed border-white/15" style="border-color: rgba(255, 255, 255, 0.15);"></div>
+    <div class="h-full w-px border-r border-dashed border-white/15" style="border-color: rgba(255, 255, 255, 0.15);"></div>
+  </div>
+
+  <div class="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 w-full">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+      <!-- Left Column: Big Contrasting Typography -->
+      <div class="lg:col-span-7 flex flex-col gap-4">
+        <span class="text-xs uppercase tracking-[0.2em] font-semibold text-neutral-400" style="color: #a3a3a3;">
+          The Story Behind SEVENINE
+        </span>
+
+        <h2
+          class="text-4xl sm:text-6xl md:text-7xl lg:text-[5.25rem] font-bold tracking-[-0.035em] leading-[1.08] text-white"
+          style="font-family: 'Plus Jakarta Sans', 'Poppins', sans-serif; color: #ffffff;"
         >
-          Read about us
-        </a>
+          Get to know the <br class="hidden sm:inline" />
+          story that <br class="hidden sm:inline" />
+          <span
+            class="font-normal italic tracking-[-0.01em] text-[#b4f53c]"
+            style="font-family: 'Instrument Serif', Georgia, serif; color: #b4f53c;"
+          >
+            bridges 7 and 9.
+          </span>
+        </h2>
+      </div>
+
+      <!-- Right Column: Narrative Body Text -->
+      <div class="lg:col-span-5 flex flex-col gap-6 pt-2 lg:pt-10">
+        <p class="text-neutral-300 text-lg sm:text-xl font-normal leading-relaxed" style="color: #e5e5e5;">
+          The name <strong class="text-white font-semibold" style="color: #ffffff;">SEVENINE</strong> draws inspiration from the defining grading scales of world-class curricula — the International Baccalaureate’s iconic <strong class="text-white font-semibold" style="color: #ffffff;">7-point scale</strong> and Cambridge IGCSE’s rigorous <strong class="text-white font-semibold" style="color: #ffffff;">9-point scale</strong>.
+        </p>
+
+        <p class="text-neutral-400 text-base sm:text-lg leading-relaxed" style="color: #a3a3a3;">
+          While IB and IGCSE students share demanding academic rigor, unique project components (like IA, EE, and CAS), and global ambitions, their inter-school communities in Pune have traditionally remained fragmented inside individual campuses.
+        </p>
+
+        <p class="text-neutral-400 text-base sm:text-lg leading-relaxed" style="color: #a3a3a3;">
+          SEVENINE unites these two student communities into a safe, structured, and vibrant inter-school ecosystem — enabling peer mentorship, high-impact collaboration, inter-school athletics, and collective academic excellence across Pune.
+        </p>
+
+        <div class="pt-4 flex items-center gap-4">
+          <a
+            href="#features"
+            class="inline-flex items-center gap-2 text-sm font-medium transition-colors group"
+            style="color: #ffffff;"
+            onmouseover="this.style.color='#b4f53c'"
+            onmouseout="this.style.color='#ffffff'"
+          >
+            <span>Explore platform features</span>
+            <svg
+              class="w-4 h-4 transition-transform group-hover:translate-x-1"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Subtle Legal Footnote -->
+        <p class="pt-6 text-[0.72rem] leading-normal text-neutral-500 border-t border-white/10" style="color: #737373;">
+          *Legal Notice: SEVENINE is an independent student platform and community. It is not affiliated with, authorized, or endorsed by the International Baccalaureate Organization (IBO) or Cambridge Assessment International Education (CAIE). "IB" and "IGCSE" are registered trademarks of their respective owners.
+        </p>
       </div>
     </div>
   </div>

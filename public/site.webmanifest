@@ -1,6 +1,6 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "SEVENINE",
+    "short_name": "79",
     "icons": [
        {
           "src": "/android-chrome-192x192.png",
@@ -13,7 +13,7 @@
         "type": "image/png"
         }
     ],
-    "theme_color": "#FFFFFF",
-    "background_color": "#FFFFFF",
+    "theme_color": "#0b0d11",
+    "background_color": "#0b0d11",
     "display": "standalone"
  }
