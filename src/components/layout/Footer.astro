@@ -23,13 +23,13 @@ const socialLinks = [
 
 <footer
   x-data="{ legalModal: false, activeTab: 'trademark' }"
-  class="relative mt-20 pt-16 pb-12 sm:pt-20 sm:pb-16 overflow-hidden border-t border-neutral-300/40 dark:border-white/10"
+  class="relative pt-16 pb-12 sm:pt-20 sm:pb-16 overflow-hidden bg-[#28292D] border-t border-[#7E7F7E]/30"
   aria-labelledby="footer-heading"
 >
   <!-- Vertical dashed guide lines continuing the editorial grid -->
   <div class="pointer-events-none absolute inset-0 px-3 sm:px-6 lg:px-8 flex justify-between">
-    <div class="h-full w-px border-l border-dashed border-neutral-300/40 dark:border-white/10"></div>
-    <div class="h-full w-px border-r border-dashed border-neutral-300/40 dark:border-white/10"></div>
+    <div class="h-full w-px border-l border-dashed border-[#7E7F7E]/30"></div>
+    <div class="h-full w-px border-r border-dashed border-[#7E7F7E]/30"></div>
   </div>
 
   <h2 id="footer-heading" class="sr-only">Footer</h2>
@@ -37,13 +37,13 @@ const socialLinks = [
     <div class="flex flex-col justify-between gap-12 lg:flex-row lg:items-start">
       <!-- Brand & Tagline -->
       <div class="flex max-w-md flex-col items-start gap-5">
-        <a href="#" aria-label="SEVENINE - 79 | sevenine.in">
+        <a href="#" aria-label="SEVENINE - 79 | sevenine.in" class="text-[#F5EBDD]">
           <Logo size="md" />
         </a>
-        <p class="text-neutral-600 dark:text-neutral-400 text-sm sm:text-base leading-relaxed">
+        <p class="text-[#7E7F7E] text-sm sm:text-base leading-relaxed">
           Academic & Social Exchange Platform built exclusively for IB & IGCSE students in Pune. Bridging the IB 7-point and IGCSE 9-point scales.
         </p>
-        <p class="text-neutral-500 dark:text-neutral-500 text-xs">
+        <p class="text-[#7E7F7E] opacity-70 text-xs">
           © 2026 SEVENINE (sevenine.in). All rights reserved.
         </p>
       </div>
@@ -52,7 +52,7 @@ const socialLinks = [
       <div class="flex flex-wrap items-start gap-12 sm:gap-16">
         <!-- In-page Navigation -->
         <div class="flex flex-col gap-4">
-          <p class="text-xs uppercase tracking-[0.18em] font-semibold text-neutral-900 dark:text-white">
+          <p class="text-xs uppercase tracking-[0.18em] font-semibold text-[#F5EBDD]">
             Navigation
           </p>
           <ul role="list" class="flex flex-col gap-2.5">
@@ -61,7 +61,7 @@ const socialLinks = [
                 <li>
                   <a
                     href={link.href}
-                    class="text-sm text-neutral-600 hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-white transition-colors"
+                    class="text-sm text-[#7E7F7E] hover:text-[#C17A5D] transition-colors"
                   >
                     {link.name}
                   </a>
@@ -73,7 +73,7 @@ const socialLinks = [
 
         <!-- Legal & Compliance (On-Page Modals) -->
         <div class="flex flex-col gap-4">
-          <p class="text-xs uppercase tracking-[0.18em] font-semibold text-neutral-900 dark:text-white">
+          <p class="text-xs uppercase tracking-[0.18em] font-semibold text-[#F5EBDD]">
             Legal & Trust
           </p>
           <ul role="list" class="flex flex-col gap-2.5 text-sm">
@@ -81,7 +81,7 @@ const socialLinks = [
               <button
                 type="button"
                 @click="legalModal = true; activeTab = 'trademark'"
-                class="text-neutral-600 hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-white text-left transition-colors cursor-pointer"
+                class="text-[#7E7F7E] hover:text-[#C17A5D] text-left transition-colors cursor-pointer"
               >
                 Trademark & Affiliation
               </button>
@@ -90,7 +90,7 @@ const socialLinks = [
               <button
                 type="button"
                 @click="legalModal = true; activeTab = 'integrity'"
-                class="text-neutral-600 hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-white text-left transition-colors cursor-pointer"
+                class="text-[#7E7F7E] hover:text-[#C17A5D] text-left transition-colors cursor-pointer"
               >
                 Academic Integrity Policy
               </button>
@@ -99,7 +99,7 @@ const socialLinks = [
               <button
                 type="button"
                 @click="legalModal = true; activeTab = 'privacy'"
-                class="text-neutral-600 hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-white text-left transition-colors cursor-pointer"
+                class="text-[#7E7F7E] hover:text-[#C17A5D] text-left transition-colors cursor-pointer"
               >
                 Privacy & Safety
               </button>
@@ -108,7 +108,7 @@ const socialLinks = [
               <button
                 type="button"
                 @click="legalModal = true; activeTab = 'terms'"
-                class="text-neutral-600 hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-white text-left transition-colors cursor-pointer"
+                class="text-[#7E7F7E] hover:text-[#C17A5D] text-left transition-colors cursor-pointer"
               >
                 Terms of Use
               </button>
@@ -118,7 +118,7 @@ const socialLinks = [
 
         <!-- Social Connections -->
         <div class="flex flex-col gap-4">
-          <p class="text-xs uppercase tracking-[0.18em] font-semibold text-neutral-900 dark:text-white">
+          <p class="text-xs uppercase tracking-[0.18em] font-semibold text-[#F5EBDD]">
             Connect
           </p>
           <ul role="list" class="flex flex-col gap-3">
@@ -129,17 +129,17 @@ const socialLinks = [
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="inline-flex items-center gap-2 text-sm text-neutral-600 hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-white transition-colors group"
+                    class="inline-flex items-center gap-2 text-sm text-[#7E7F7E] hover:text-[#C17A5D] transition-colors group"
                   >
                     {link.icon === 'instagram' && (
-                      <svg class="w-4 h-4 text-neutral-500 group-hover:text-neutral-900 dark:group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <svg class="w-4 h-4 text-[#7E7F7E] group-hover:text-[#C17A5D] transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                         <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                         <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                       </svg>
                     )}
                     {link.icon === 'linkedin' && (
-                      <svg class="w-4 h-4 text-neutral-500 group-hover:text-neutral-900 dark:group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <svg class="w-4 h-4 text-[#7E7F7E] group-hover:text-[#C17A5D] transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
                         <rect x="2" y="9" width="4" height="12"></rect>
                         <circle cx="4" cy="4" r="2"></circle>
@@ -161,9 +161,9 @@ const socialLinks = [
     </div>
 
     <!-- Mandatory Legal Non-Affiliation Disclaimer Banner -->
-    <div class="mt-12 pt-6 border-t border-neutral-300/40 dark:border-white/10 text-xs text-neutral-500 dark:text-neutral-400 leading-relaxed max-w-4xl space-y-2">
+    <div class="mt-12 pt-6 border-t border-[#7E7F7E]/30 text-xs text-[#7E7F7E] leading-relaxed max-w-4xl space-y-2">
       <p>
-        <strong class="font-semibold text-neutral-700 dark:text-neutral-300">Mandatory Non-Affiliation & Trademark Disclaimer:</strong> SEVENINE (sevenine.in) is an independent peer collaboration community organized by and for students in Pune, India. SEVENINE is not affiliated with, associated with, authorized by, sponsored by, or endorsed by the International Baccalaureate Organization (IBO) or Cambridge Assessment International Education (CAIE).
+        <strong class="font-semibold text-[#F5EBDD]">Mandatory Non-Affiliation & Trademark Disclaimer:</strong> SEVENINE (sevenine.in) is an independent peer collaboration community organized by and for students in Pune, India. SEVENINE is not affiliated with, associated with, authorized by, sponsored by, or endorsed by the International Baccalaureate Organization (IBO) or Cambridge Assessment International Education (CAIE).
       </p>
       <p>
         "International Baccalaureate", "IB", and the IB logo are registered trademarks of the International Baccalaureate Organization. "Cambridge", "IGCSE", and related marks are registered trademarks of Cambridge Assessment International Education / University of Cambridge. All references to IB, IGCSE, IA, EE, CAS, and TOK are made solely for nominative, descriptive, and identification purposes under fair use doctrine.
@@ -172,8 +172,8 @@ const socialLinks = [
   </div>
 
   <!-- Giant Enlarged Logo: subtle edge-to-edge footer branding -->
-  <div class="mt-12 sm:mt-16 pt-8 border-t border-neutral-300/30 dark:border-white/5 px-4 sm:px-6 lg:px-8 select-none">
-    <div class="mx-auto max-w-7xl opacity-80 hover:opacity-100 transition-opacity">
+  <div class="mt-12 sm:mt-16 pt-8 border-t border-[#7E7F7E]/30 px-4 sm:px-6 lg:px-8 select-none">
+    <div class="mx-auto max-w-7xl opacity-40 hover:opacity-100 transition-opacity">
       <svg
         viewBox="0 0 1020 135"
         xmlns="http://www.w3.org/2000/svg"
@@ -182,12 +182,12 @@ const socialLinks = [
       >
         <defs>
           <linearGradient id="footer-logo-grad-79-lg" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#1b90ff" />
-            <stop offset="100%" stop-color="#ff551f" />
+            <stop offset="0%" stop-color="#6E5B45" />
+            <stop offset="100%" stop-color="#C17A5D" />
           </linearGradient>
           <linearGradient id="footer-logo-grad-sevenine-lg" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#1b90ff" />
-            <stop offset="100%" stop-color="#ff551f" />
+            <stop offset="0%" stop-color="#5A767B" />
+            <stop offset="100%" stop-color="#C17A5D" />
           </linearGradient>
         </defs>
 
@@ -208,7 +208,7 @@ const socialLinks = [
           font-weight="300"
           font-size="135"
           fill="currentColor"
-          class="text-neutral-400 dark:text-neutral-600 opacity-40"
+          class="text-[#7E7F7E] opacity-20"
         >|</text>
 
         <text

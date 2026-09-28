@@ -1,117 +1,86 @@
 ---
-import CRTWarp from './CRTWarp.jsx';
-
-interface Props {
-  headlinePrefix?: string;
-  focus1?: string;
-  focus2?: string;
-  focus3?: string;
-  headlineSuffix?: string;
-}
-
-const {
-  headlinePrefix = 'WE LIVE OUR BEST LIVES EXCELLING AT',
-  focus1 = 'IB DIPLOMA',
-  focus2 = 'CAMBRIDGE IGCSE',
-  focus3 = 'PEER VENTURES',
-  headlineSuffix = 'AND EVERYTHING WE TOUCH',
-} = Astro.props;
+import StrokeText from './StrokeText.jsx';
 ---
 
 <section
-  class="relative min-h-[88vh] w-full flex flex-col justify-center items-center overflow-hidden pt-32 pb-24 sm:pt-40 sm:pb-32 px-6 sm:px-10 lg:px-16 select-none hero-radiance-stage transition-colors duration-300"
+  class="relative w-[100vw] left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] overflow-hidden select-none transition-colors duration-300 bg-cover bg-center bg-no-repeat"
+  style="background-image: url('/hero_background.jpg'); background-color: #F5EBDD; color: #ffffff;"
   aria-label="Hero"
+  id="hero"
 >
-  <!-- Ambient Logo Color Atmosphere (Blue & Orange) -->
-  <div class="pointer-events-none absolute -top-32 -left-32 w-[28rem] h-[28rem] rounded-full bg-[#1b90ff]/10 dark:bg-[#1b90ff]/15 blur-3xl z-0" aria-hidden="true"></div>
-  <div class="pointer-events-none absolute -bottom-32 -right-32 w-[28rem] h-[28rem] rounded-full bg-[#ff551f]/10 dark:bg-[#ff551f]/15 blur-3xl z-0" aria-hidden="true"></div>
+  <!-- Background Overlay (Removed heavy tint, keeping subtle gradient if needed for text legibility later, but currently clear) -->
+  <div class="pointer-events-none absolute inset-0 z-0 bg-transparent"></div>
 
-  <!-- React Bits <CRTWarp /> Shader in Background with Logo Colors -->
-  <div class="pointer-events-none absolute inset-0 z-0 overflow-hidden opacity-90 dark:opacity-80">
-    <CRTWarp
-      client:load
-      color="#1b90ff"
-      secondaryColor="#ff551f"
-      backgroundColor="auto"
-      speed={0.5}
-      curvature={0.25}
-      scanlineStrength={0.25}
-      scanlineFrequency={200}
-      waveAmplitude={0.3}
-      waveFrequency={2.5}
-      bloom={0.85}
-      bloomRadius={1.1}
-      noise={0.05}
-      vignette={0}
-      brightness={0.8}
-      pixelation={1}
-      rgbShift={0.015}
-      mouseReact={true}
-      mouseStrength={0.5}
-      dpr={1}
-      fps={30}
-    />
+  <!-- Vertical dashed guide lines matching About/Expertise editorial grid -->
+  <div class="pointer-events-none absolute inset-0 px-3 sm:px-6 lg:px-8 flex justify-between z-[1]">
+    <div class="h-full w-px border-l border-dashed border-white/20"></div>
+    <div class="h-full w-px border-r border-dashed border-white/20"></div>
   </div>
 
-  <!-- Center Floating Golden Ring Emblem -->
-  <div class="relative z-10 mb-8 sm:mb-12 flex items-center justify-center">
-    <div class="gold-halo-rotate group cursor-pointer transition-transform duration-500 hover:scale-110">
-      <svg class="w-10 h-5 sm:w-12 sm:h-6 drop-shadow-[0_2px_10px_rgba(217,119,6,0.35)]" viewBox="0 0 60 28" fill="none">
-        <ellipse cx="30" cy="14" rx="26" ry="9" stroke="url(#gold-ring-gradient)" stroke-width="4.5" />
-        <defs>
-          <linearGradient id="gold-ring-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#f59e0b" />
-            <stop offset="30%" stop-color="#fef3c7" />
-            <stop offset="65%" stop-color="#d97706" />
-            <stop offset="100%" stop-color="#92400e" />
-          </linearGradient>
-        </defs>
-      </svg>
+  <!-- Hero Content Structure (matching the provided image) -->
+  <div class="relative z-10 w-full min-h-screen flex flex-col justify-end pb-12 lg:pb-20 px-6 sm:px-12 lg:px-24 mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-end w-full">
+      
+      <!-- Left Column: Title and Subtitle -->
+      <div class="flex flex-col gap-4">
+        <!-- StrokeText replaces the main H1 -->
+        <div class="w-full max-w-md -ml-2">
+          <StrokeText 
+            client:load 
+            text="SEVENINE" 
+            strokeColor="#ffffff" 
+            fillColor="#ffffff" 
+            strokeWidth={1.2} 
+            fontSize={96} 
+            fontWeight={500} 
+            letterSpacing={-2}
+          />
+        </div>
+        <p class="text-2xl sm:text-3xl lg:text-4xl text-white font-medium tracking-wide -mt-2 drop-shadow-md">
+          Unifying Pune's student community.
+        </p>
+        
+        <div class="flex items-center gap-4 mt-8 lg:mt-16 text-sm text-white/80 tracking-wider font-medium">
+          <span>Built for IB & IGCSE</span>
+          <span>SEVENINE &copy; 2026</span>
+        </div>
+      </div>
+
+      <!-- Right Column: Button and Body Text -->
+      <div class="flex flex-col gap-6 lg:max-w-md ml-auto">
+        <div>
+          <a href="#community" class="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-[#C17A5D] text-sm text-white font-medium hover:bg-[#5A767B] transition-colors shadow-lg">
+            Start Exploring
+          </a>
+        </div>
+        
+        <p class="text-base sm:text-lg text-white/95 leading-relaxed font-medium drop-shadow-md">
+          An exclusive platform that helps you explore extracurriculars deeper, ask sharper questions, and uncover collaborations that matter.
+        </p>
+        
+        <p class="text-base sm:text-lg text-white/95 leading-relaxed font-medium drop-shadow-md">
+          We go beyond school boundaries — connecting knowledge in real time, drawing from trusted academic peers, and guiding your journey with ambition and clarity.
+        </p>
+      </div>
+      
     </div>
   </div>
 
-  <!-- CENTER STAGE: Bold Uppercase Mission Statement with Underlined Specializations -->
-  <div class="relative z-10 max-w-5xl mx-auto text-center">
-    <h1
-      class="hero-manifesto-heading text-2xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold uppercase leading-[1.3] tracking-[-0.015em]"
-      style="font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;"
-    >
-      <span>{headlinePrefix}</span>
-      <span class="inline-block relative underline decoration-[2.5px] sm:decoration-[3.5px] underline-offset-[6px] sm:underline-offset-[8px] mx-1">
-        {focus1}
-      </span>,
-      <span class="inline-block relative underline decoration-[2.5px] sm:decoration-[3.5px] underline-offset-[6px] sm:underline-offset-[8px] mx-1">
-        {focus2}
-      </span>,
-      <span class="inline-block relative underline decoration-[2.5px] sm:decoration-[3.5px] underline-offset-[6px] sm:underline-offset-[8px] mx-1">
-        {focus3}
-      </span>
-      <span>{headlineSuffix}</span>
-    </h1>
+  <!-- Scroll Hinter -->
+  <div class="absolute bottom-8 left-[50%] -translate-x-[50%] flex flex-col items-center gap-3 z-10 opacity-70 hover:opacity-100 transition-opacity">
+    <span class="text-[0.65rem] uppercase tracking-[0.2em] text-white font-medium drop-shadow-md">Scroll</span>
+    <div class="w-[1px] h-10 bg-white/20 relative overflow-hidden rounded-full">
+      <div class="absolute top-0 left-0 w-full h-full bg-white animate-scroll-line"></div>
+    </div>
   </div>
+
+  <style>
+    @keyframes scrollLine {
+      0% { transform: translateY(-100%); }
+      100% { transform: translateY(100%); }
+    }
+    .animate-scroll-line {
+      animation: scrollLine 1.5s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+    }
+  </style>
 </section>
-
-<style>
-  .hero-radiance-stage {
-    background-color: #0b0d11;
-    color: #f3f4f6;
-  }
-
-  .hero-manifesto-heading {
-    color: #ffffff;
-    text-shadow: 0 2px 20px rgba(11, 13, 17, 0.95), 0 0 8px rgba(11, 13, 17, 0.9);
-  }
-
-  .gold-halo-rotate {
-    animation: floatHalo 6s ease-in-out infinite;
-  }
-
-  @keyframes floatHalo {
-    0%, 100% {
-      transform: translateY(0px) rotateX(15deg);
-    }
-    50% {
-      transform: translateY(-5px) rotateX(25deg);
-    }
-  }
-</style>

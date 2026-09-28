@@ -15,7 +15,7 @@ const canonicalURL = new URL(Astro.url.pathname, 'https://sevenine.in');
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -52,7 +52,7 @@ const canonicalURL = new URL(Astro.url.pathname, 'https://sevenine.in');
     <ViewTransitions />
   </head>
   <body
-    class="bg-primary-50 text-primary-950 dark:bg-primary-950 dark:text-primary-200 antialiased transition"
+    class="bg-primary-50 text-primary-950 dark:bg-primary-950 dark:text-primary-200 antialiased transition overflow-x-hidden"
   >
     <!-- Skip to main content (accessibility) -->
     <a
@@ -93,17 +93,16 @@ const canonicalURL = new URL(Astro.url.pathname, 'https://sevenine.in');
 
       Alpine.store('theme', {
         init() {
-          this.isDark = true;
+          this.isDark = false;
           if (typeof localStorage !== 'undefined') {
-            localStorage.setItem('theme', 'dark');
+            localStorage.setItem('theme', 'light');
           }
         },
 
-        isDark: true,
+        isDark: false,
 
         toggle() {
-          // Permanently dark mode
-          this.isDark = true;
+          this.isDark = false;
         },
       });
 

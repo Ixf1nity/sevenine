@@ -1,0 +1,108 @@
+---
+// "The People Behind SEVENINE"
+// Aesthetic: Matches About.astro editorial style (#050608, dashed guides,
+// Instrument Serif italic accent in #b4f53c, Plus Jakarta Sans bold)
+import FlexCarousel from './FlexCarousel.jsx';
+
+const teamMembers = [
+  {
+    title: 'Ayush Shinde',
+    subtitle: 'Co-Founder',
+    src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=900&q=80&auto=format&fit=crop',
+    alt: 'Ayush Shinde, Co-Founder at SEVENINE'
+  },
+  {
+    title: 'Ashwath Anand',
+    subtitle: 'Co-Founder',
+    src: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=900&q=80&auto=format&fit=crop',
+    alt: 'Ashwath Anand, Co-Founder at SEVENINE'
+  },
+  {
+    title: 'JD',
+    subtitle: 'Management',
+    src: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=900&q=80&auto=format&fit=crop',
+    alt: 'JD, Management at SEVENINE'
+  },
+  {
+    title: 'Ansh Nayak',
+    subtitle: 'Management',
+    src: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=900&q=80&auto=format&fit=crop',
+    alt: 'Ansh Nayak, Management at SEVENINE'
+  }
+];
+---
+
+<section
+  class="relative bg-[#F5EBDD] text-[#28292D] overflow-hidden py-24 sm:py-32 lg:py-40"
+  style="background-color: #F5EBDD; color: #28292D;"
+  id="team"
+  aria-label="The People Behind SEVENINE"
+>
+  <!-- Ambient Ethereal Glows -->
+  <div class="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+    <div class="absolute bottom-0 left-0 w-[900px] h-[900px] bg-[#6E5B45]/10 rounded-full blur-3xl -translate-x-1/3 translate-y-1/3 mix-blend-multiply"></div>
+    <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-[#C17A5D]/10 rounded-full blur-3xl translate-x-1/4 -translate-y-1/4 mix-blend-multiply"></div>
+  </div>
+
+  <!-- Subtle Dot Grid Texture -->
+  <div class="pointer-events-none absolute inset-0 z-0 opacity-20" style="background-image: radial-gradient(circle, #6E5B45 1.5px, transparent 1.5px); background-size: 24px 24px;"></div>
+
+  <!-- Vertical dashed guide lines matching About/Expertise editorial grid -->
+  <div class="pointer-events-none absolute inset-0 px-3 sm:px-6 lg:px-8 flex justify-between z-[1]">
+    <div class="h-full w-px border-l border-dashed border-[#7E7F7E]/30"></div>
+    <div class="h-full w-px border-r border-dashed border-[#7E7F7E]/30"></div>
+  </div>
+
+  <div class="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 w-full z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+      <!-- Left Column: Big Typography (matching About.astro layout) -->
+      <div class="lg:col-span-7 flex flex-col gap-4">
+        <span class="text-xs uppercase tracking-[0.2em] font-semibold text-[#6E5B45]">
+          The People Behind SEVENINE
+        </span>
+
+        <h2
+          class="text-4xl sm:text-6xl md:text-7xl lg:text-[5.25rem] font-bold tracking-[-0.035em] leading-[1.08] text-[#28292D]"
+          style="font-family: 'Plus Jakarta Sans', 'Poppins', sans-serif;"
+        >
+          Meet the team<br class="hidden sm:inline" />
+          that makes<br class="hidden sm:inline" />
+          <span
+            class="font-normal italic tracking-[-0.01em] text-[#C17A5D] inline-block leading-[1.1] pb-1"
+            style="font-family: 'Instrument Serif', Georgia, serif;"
+          >
+            all this happen.
+          </span>
+        </h2>
+      </div>
+
+      <!-- Right Column: Narrative Body (matching About.astro layout) -->
+      <div class="lg:col-span-5 flex flex-col gap-6 pt-2 lg:pt-10">
+        <p class="text-[#28292D] text-lg sm:text-xl font-normal leading-relaxed">
+          Built by <strong class="text-[#28292D] font-semibold">IB and IGCSE students</strong> across Pune's top international schools who experienced the isolation firsthand and decided to fix it.
+        </p>
+
+        <p class="text-[#6E5B45] text-base sm:text-lg leading-relaxed">
+          Our philosophy is simple: hire great people and give them the resources and support to do their best work.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive WebGL FlexCarousel -->
+  <div class="relative w-full h-[540px] sm:h-[680px] lg:h-[780px] mt-16 sm:mt-20">
+    <FlexCarousel
+      client:load
+      items={teamMembers}
+      preset="ribbon"
+      intro="rise"
+      cardHeight={0.60}
+      gap={16}
+      radius={0}
+      focusOnClick={true}
+      autoplay={true}
+      interval={4}
+      captions={true}
+    />
+  </div>
+</section>

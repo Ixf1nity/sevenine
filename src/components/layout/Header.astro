@@ -20,9 +20,7 @@ const { links = defaultLinks } = Astro.props;
 >
   <div class="mx-auto max-w-4xl lg:max-w-5xl pointer-events-auto">
     <!-- Floating Capsule Pill Container -->
-    <div
-      class="rounded-full bg-white/95 dark:bg-[#16181e]/95 backdrop-blur-md border border-black/[0.08] dark:border-white/10 shadow-[0_4px_24px_rgba(0,0,0,0.06)] px-4 sm:px-6 py-2 sm:py-2.5 flex items-center justify-between transition"
-    >
+    <div class="rounded-full bg-[#F5EBDD]/90 backdrop-blur-md border border-[#6E5B45]/20 shadow-lg px-4 sm:px-6 py-2 sm:py-2.5 flex items-center justify-between transition">
       <!-- Left: Brand Logo -->
       <a
         href="#"
@@ -38,7 +36,7 @@ const { links = defaultLinks } = Astro.props;
           links.map((link) => (
             <a
               href={link.href}
-              class="text-sm font-medium text-neutral-600 hover:text-neutral-950 dark:text-neutral-300 dark:hover:text-white transition-colors duration-150"
+              class="text-[0.85rem] font-medium text-[#6E5B45] hover:text-[#C17A5D] transition-colors duration-150 tracking-wide"
             >
               {link.name}
             </a>
@@ -51,7 +49,7 @@ const { links = defaultLinks } = Astro.props;
         <!-- Join Now pill button -->
         <a
           href="#community"
-          class="inline-flex items-center gap-1.5 rounded-full bg-[#35373b] hover:bg-[#1e2023] dark:bg-white dark:hover:bg-neutral-200 text-white dark:text-neutral-950 px-4 sm:px-5 py-2 text-xs sm:text-sm font-medium transition duration-200 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-800"
+          class="inline-flex items-center gap-1.5 rounded-full bg-[#C17A5D] hover:bg-[#5A767B] text-white px-5 py-2 text-xs sm:text-sm font-medium transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#28292D] shadow-sm"
         >
           <svg
             class="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
@@ -66,7 +64,7 @@ const { links = defaultLinks } = Astro.props;
             <line x1="7" y1="17" x2="17" y2="7"></line>
             <polyline points="7 7 17 7 17 17"></polyline>
           </svg>
-          <span>Join Now</span>
+          <span>Join Network</span>
         </a>
 
 
@@ -74,7 +72,7 @@ const { links = defaultLinks } = Astro.props;
         <!-- Mobile Menu Toggle Button -->
         <button
           type="button"
-          class="md:hidden text-neutral-600 dark:text-neutral-300 hover:text-neutral-950 dark:hover:text-white h-8 w-8 inline-flex items-center justify-center rounded-full transition focus:outline-none"
+          class="md:hidden text-[#6E5B45] hover:text-[#28292D] h-8 w-8 inline-flex items-center justify-center rounded-full transition focus:outline-none"
           @click="open = !open"
           aria-label="Toggle navigation menu"
         >
@@ -111,15 +109,14 @@ const { links = defaultLinks } = Astro.props;
       x-cloak
       x-show="open"
       x-collapse
-      class="mt-2 md:hidden rounded-2xl bg-white/95 dark:bg-[#16181e]/95 backdrop-blur-md border border-black/[0.08] dark:border-white/10 shadow-lg p-4"
+      class="mt-2 md:hidden rounded-2xl bg-[#F5EBDD]/95 backdrop-blur-md border border-[#6E5B45]/20 shadow-xl p-4 sm:p-6"
     >
       <nav class="flex flex-col gap-2" aria-label="Mobile navigation">
         {
           links.map((link) => (
             <a
               href={link.href}
-              @click="open = false"
-              class="px-3 py-2 rounded-xl text-base font-medium text-neutral-700 hover:bg-black/5 dark:text-neutral-200 dark:hover:bg-white/5 transition"
+              class="px-3 py-2 rounded-xl text-base font-medium text-[#28292D] hover:bg-[#6E5B45]/10 transition"
             >
               {link.name}
             </a>
@@ -130,9 +127,9 @@ const { links = defaultLinks } = Astro.props;
         <a
           href="#community"
           @click="open = false"
-          class="w-full text-center py-2.5 rounded-xl bg-[#1f242e] text-white dark:bg-white dark:text-neutral-950 font-medium text-sm transition"
+          class="w-full text-center py-2.5 rounded-xl bg-[#C17A5D] text-white font-medium text-sm transition"
         >
-          Join Now ↗
+          Join Network ↗
         </a>
         <div class="flex items-center justify-center gap-4 text-xs text-neutral-500 dark:text-neutral-400">
           <a href="https://instagram.com/sevenine.in" target="_blank" rel="noopener noreferrer" class="hover:underline">Instagram</a>
